@@ -2,10 +2,9 @@ import 'package:english_vocab_app_ui/constants.dart';
 import 'package:english_vocab_app_ui/models/discovery_vocabs.dart';
 import 'package:english_vocab_app_ui/presentation/widgets/home/best_of_week_bar.dart';
 import 'package:english_vocab_app_ui/presentation/widgets/home/custom_heading_text.dart';
-import 'package:english_vocab_app_ui/presentation/widgets/home/custom_sub_title_text.dart';
+import 'package:english_vocab_app_ui/presentation/widgets/home/discovery_vocab_card.dart';
 import 'package:english_vocab_app_ui/presentation/widgets/home/target_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -21,13 +20,13 @@ class HomeScreen extends StatelessWidget {
             height: constraints.maxHeight,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(top: 80),
+                      padding: EdgeInsets.only(top: 80, bottom: 20),
                       child: CustomHeadingText(text: "Discover"),
                     ),
                     SizedBox(
@@ -38,33 +37,7 @@ class HomeScreen extends StatelessWidget {
                         physics: const BouncingScrollPhysics(),
                         itemBuilder: (context, index) {
                           DiscoveryVocabs discoveryVocab = DiscoveryVocabs.vocabsList[index];
-                          return Padding(
-                          padding: const EdgeInsets.only(right: 15),
-                          child: Stack(
-                            children: [
-                              Image.asset("assets/images/card_$index.png"),
-                              Positioned(
-                                top: 20,
-                                left: 20,
-                                child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 110,
-                                    height: 40,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(35),
-                                    ),
-                                    child: CustomSubTitleText(text: discoveryVocab.topic, color: kOrangeColor),
-                                  ),
-                                CustomHeadingText(text: discoveryVocab.title, fontSize: 21, color: Colors.white),
-                                CustomSubTitleText(text: '${discoveryVocab.numberOfWords} vocabulary words', color: kLightWhiteColor)
-                              ],))
-                            ],
-                          ),
-                        );
+                          return DiscoveryVocabCard(discoveryVocab: discoveryVocab, index: index,);
                         },
                       ),
                     ),
@@ -74,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const BestOfWeekBar(),
                     Padding(
-                      padding: const EdgeInsets.only(top: 16),
+                      padding: const EdgeInsets.only(top: 16, right: 20),
                       child: Column(
                         children: List.generate(3, (index) => Container(
                           width: double.infinity,
@@ -103,5 +76,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
 

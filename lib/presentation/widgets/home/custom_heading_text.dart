@@ -5,10 +5,12 @@ class CustomHeadingText extends StatelessWidget {
   final String text;
   final double fontSize;
   final Color color;
+  final TextAlign textAlign;
 
   const CustomHeadingText({super.key,
     required this.text,
     this.fontSize = 28,
+    this.textAlign = TextAlign.start,
     this.color = kBlackColor,
   });
 
@@ -22,6 +24,7 @@ class CustomHeadingText extends StatelessWidget {
         fontFamily: 'JosefinSans',
         fontWeight: FontWeight.w700,
       ),
+      textAlign: textAlign,
     );
   }
 }
