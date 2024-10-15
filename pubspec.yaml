@@ -1,0 +1,46 @@
+name: english_vocab_app_ui
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_svg:
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: JosefinSans
+      fonts:
+        - asset: assets/fonts/JosefinSans/JosefinSans-Bold.ttf
+          weight: 900
+        - asset: assets/fonts/JosefinSans/JosefinSans-SemiBold.ttf
+          weight: 700
+        - asset: assets/fonts/JosefinSans/JosefinSans-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/JosefinSans/JosefinSans-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/JosefinSans/JosefinSans-Light.ttf
+          weight: 400
+        - asset: assets/fonts/JosefinSans/JosefinSans-Thin.ttf
+          weight: 300
