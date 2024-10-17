@@ -28,7 +28,7 @@ class BestOfWeekBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                SvgPicture.asset(vocab.iconPath),
+                Image.asset(vocab.iconPath),
                 const SizedBox(height: 8,),
                 CustomHeadingText(text: vocab.title, fontSize: 14,),
               ],

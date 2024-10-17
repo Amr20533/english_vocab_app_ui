@@ -31,8 +31,8 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Positioned(
                 bottom: 6,
-                right: -75,
-                child: Image.asset("assets/images/image 7.png")),
+                right: -85,
+                child: Image.asset("assets/images/headphone.png")),
 
             Positioned(
                 bottom: MediaQuery.sizeOf(context).height * 0.142,
